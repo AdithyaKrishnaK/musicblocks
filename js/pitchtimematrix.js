@@ -161,6 +161,7 @@ function Matrix() {
         solfaCell.innerHTML = '<b>' + _('Solfa') + '</b>';
         solfaCell.style.width = Math.floor(MATRIXSOLFEWIDTH * this._cellScale) + 'px';
         solfaCell.style.minWidth = solfaCell.style.width;
+        solfaCell.style.position = "fixed";
         solfaCell.style.maxWidth = solfaCell.style.width;
         solfaCell.style.height = Math.floor(MATRIXBUTTONHEIGHT * this._cellScale) + 'px';
         solfaCell.style.backgroundColor = MATRIXLABELCOLOR;
@@ -170,32 +171,38 @@ function Matrix() {
         var iconSize = Math.floor(this._cellScale * 24);
 
         var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('play'));
+        cell.style.position = "fixed";
         cell.onclick=function() {
             that._logo.setTurtleDelay(0);
             that._playAll();
         }
 
         var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('save'));
+        cell.style.position = "fixed";
         cell.onclick=function() {
             that._save();
         }
 
         var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('clear'));
+        cell.style.position = "fixed";
         cell.onclick=function() {
             that._clear();
         }
 
         var cell = this._addButton(row, 4, 'export-button.svg', iconSize, _('export'));
+        cell.style.position = "fixed";
         cell.onclick=function() {
             that._export();
         }
 
         var cell = this._addButton(row, 5, 'sort.svg', iconSize, _('sort'));
+        cell.style.position = "fixed";
         cell.onclick=function() {
             that._sort();
         }
 
         var cell = this._addButton(row, 6, 'close-button.svg', iconSize, _('close'));
+        cell.style.position = "fixed";
         cell.onclick=function() {
             docById('pitchtimematrix').style.visibility = 'hidden';
             docById('pitchtimematrix').style.border = 0;
